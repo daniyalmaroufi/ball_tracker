@@ -1,0 +1,7 @@
+<launch>
+<node pkg="turtlesim" type="turtlesim_node" name="turtle"/>
+<node pkg="demo_pckg" type="camvi.py" name="camvi" />
+<node pkg="demo_pckg" type="turtle_move.py" name="turtle_move" output="screen" />
+<node pkg="demo_pckg" type="turtle_main.py" name="turtle_main" />
+
+</launch>

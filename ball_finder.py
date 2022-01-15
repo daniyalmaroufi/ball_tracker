@@ -21,7 +21,6 @@ while True:
     dilate=cv2.dilate(erosion,None,iterations=2)
     cnts,_=cv2.findContours(dilate,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
 
-
     for c in cnts:
         (x, y),r=cv2.minEnclosingCircle(c)
         center=(int(x),int(y))
@@ -31,7 +30,7 @@ while True:
             max_radius=r
             max_center=center
 
-    cv2.circle(frame,max_center,max_radius,(0,255,0),2)
+    cv2.circle(frame,center,r,(0,255,0),2)
     cv2.imshow("image",frame)
 
 
@@ -39,7 +38,6 @@ while True:
         break
 
 
-
-cv2.destroyAllwindows()
+cv2.destroyAllWindows()
 cap.release()
 
